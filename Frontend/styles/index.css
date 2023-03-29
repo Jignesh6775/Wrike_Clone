@@ -102,3 +102,10 @@ a{
     opacity: 1;
     transform: rotate(90deg);
 }
+
+#main-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid;
+}
