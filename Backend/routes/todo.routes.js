@@ -31,7 +31,7 @@ todoRouter.post("/add", async (req, res) => {
     try {
         const note = new TodoModel(req.body)
         await note.save()
-        res.status(200).send({ "msg": "A New Note has been added" })
+        res.status(200).send({ "msg": "A New Todo has been added" })
     } catch (err) {
         res.status(400).send({ "msg": err.message })
     }
@@ -44,7 +44,7 @@ todoRouter.patch("/update/:noteID", async (req, res) => {
     const noteID = req.params.noteID
     try {
         await TodoModel.findByIdAndUpdate({ _id: noteID }, payload)
-        res.status(200).send({ "msg": "A New Note has been updated" })
+        res.status(200).send({ "msg": "A Todo has been updated" })
     } catch (err) {
         res.status(400).send({ "msg": err.message })
     }
@@ -55,7 +55,7 @@ todoRouter.delete("/delete/:noteID", async (req, res) => {
     const noteID = req.params.noteID
     try {
         await TodoModel.findByIdAndDelete({ _id: noteID })
-        res.status(200).send({ "msg": "A New Note has been deleted" })
+        res.status(200).send({ "msg": "A Todo has been deleted" })
     } catch (err) {
         res.status(400).send({ "msg": err.message })
     }
