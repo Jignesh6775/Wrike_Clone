@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="shortcut icon" href="./favicon/IMG_20230328_191602.jpg" type="image/x-icon">
+        <link rel="shortcut icon" href="./favicon/Picsart_23-03-28_21-41-58-083.png" type="image/x-icon">
 
     <!-- bootstrap -->
 
@@ -205,8 +205,8 @@ let cont = document.getElementById("inProgress")
 
         let ans = data.map((el, i) => {
             return `
-                <li class="li-tag">
-                    <div class="card" draggable="true">
+                <li class="li-tag" draggable="true">
+                    <div class="card">
                         <h3>Title: ${el.title}</h3>
                             <h4>Body: ${el.body}</h4>
                         <div>
@@ -309,48 +309,46 @@ let cont = document.getElementById("inProgress")
 
 
 /////////////////////////////////
-    var card = document.getElementsByClassName("li-tag")
-    var tasksSection = document.getElementsByClassName("tasksSection")
-    var dragItem = null
+    
+const imgBox = document.querySelector('.card');
+const whiteBoxes = document.getElementsByClassName('tasksSection');
 
-    for(let i of card){
-        i.addEventListener("dragstart", dragStart)
-        i.addEventListener("dragend", dragEnd)
-    }
+// Event listeners for draggable element imgBox
+imgBox.addEventListener('dragstart', (e) => {
+    console.log('DragStart has been triggered');
+    e.target.className += ' hold';
+    setTimeout(() => {
+        e.target.className = 'hide';
+    }, 0);
 
-    function dragStart(){
-        dragItem = this;
-        setTimeout(()=>this.style.display = "none",0)
-    }
+});
 
-    function dragEnd(){
-        setTimeout(()=>this.style.display = "block",0)
-        dragItem = null;
-    }
+imgBox.addEventListener('dragend', (e) => {
+    console.log('DragEnd has been triggered');
+    e.target.className = 'imgBox';
+});
 
+for (whiteBox of whiteBoxes) {
+    whiteBox.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        console.log('DragOver has been triggered');
+    });
 
-    for(let j of tasksSection){
-        j.addEventListener("dragover", dragOver)
-        j.addEventListener("dragenter", dragEnter)
-        j.addEventListener("dragleave", dragLeave)
-        j.addEventListener("drop", Drop)
-    }
+    whiteBox.addEventListener('dragenter', (e) => {
+        console.log('DragEnter has been triggered');
+        e.target.className += ' dashed'; 
+    })
 
-    function Drop(){
-        this.append(dragItem)
-    }
+    whiteBox.addEventListener('dragleave', (e) => {
+        console.log('DragLeave has been triggered');
+        e.target.className = 'whiteBox'
+    })
 
-    function dragOver(e){
-        e.preventDefault()
-    }
-
-    function dragEnter(e){
-        e.preventDefault()
-    }
-
-    function dragLeave(){
-        this.append(dragItem)
-    }
+    whiteBox.addEventListener('drop', (e) => {
+        console.log('Drop has been triggered');
+        e.target.append(imgBox);
+    })
+}
 </script>
 
 </html>
