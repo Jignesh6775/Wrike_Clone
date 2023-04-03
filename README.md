@@ -17,7 +17,8 @@ we build following 5 Pages of this website :-
 
 ● Home Page (index.html , index.css &  index.js) :
 
-    ![Screenshot 2023-04-03 111725](https://user-images.githubusercontent.com/119413894/229424492-0a43e126-df11-47bf-ae1b-747853868292.png)
+
+![Screenshot 2023-04-03 111725](https://user-images.githubusercontent.com/119413894/229425513-bad11444-4377-421d-bd8d-ce27512f2639.png)
 
     
     
