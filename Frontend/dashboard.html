@@ -41,9 +41,9 @@
                         <li>
                             <a href="./createTask.html">
                                 <span class="material-symbols-outlined">
-                                    task
+                                    bar_chart
                                 </span>
-                                <span class="title">Create Task</span>
+                                <span class="title">Analytics</span>
                             </a>
                         </li>
                         <li>
@@ -109,37 +109,19 @@
             <main>
                 <!-- projectCard start -->
                 <div class="projectCard">
-                    <!-- projectTop start -->
-                    <div class="projectTop">
-                        <h2>Project Name<br><span>Company Name</span></h2>
-                        <div class="projectDots">
+                    <div class="tasksHead">
+                        <h2>Create New Project</h2>
+                        <!-- <div class="tasksDots">
                             <span class="material-symbols-outlined">
                                 more_horiz
                             </span>
+                        </div> -->
+                        <div id="create-project">
+                            <input type="text" id="new-project-name" onfocus="this.value=''">
+                            <button id="submit-project">Create</button>
                         </div>
                     </div>
-                    <!-- projectTop end -->
-                    <!-- projectProgress start -->
-                    <div class="projectProgress">
-                        <div class="process">
-                            <h2>In Progress</h2>
-                        </div>
-                        <div class="priority">
-                            <h2>High Priority</h2>
-                        </div>
-                    </div>
-                    <!-- projectProgress end -->
-                    <!-- task start -->
-                    <div class="task">
-                        <h2>Task Done: <bold>35</bold> / 50</h2>
-                        <span class="line"></span>
-                    </div>
-                    <!-- task end -->
-                    <!-- due start -->
-                    <div class="due">
-                        <h2>Due Date: 25 August</h2>
-                    </div>
-                    <!-- due end -->
+
                 </div>
                 <!-- projectCard end -->
                 <!-- projectCard2 start -->
@@ -171,83 +153,28 @@
                 </div>
                 <!-- projectCard2 end -->
                 <!-- myTasks start -->
-                <div class="myTasks">
+                     <!-- ======================myTasks start ===================-->
+                <div class="myTasks" id="create-task">
                     <!-- tasksHead start -->
                     <div class="tasksHead">
-                        <h2>Create New Project</h2>
-                        <!-- <div class="tasksDots">
-                            <span class="material-symbols-outlined">
-                                more_horiz
-                            </span>
-                        </div> -->
+                        <h2>Create To-do for your project</h2>
+
                         <div id="create-project">
-                            <input type="text" id="new-project-name" onfocus="this.value=''">
-                            <button id="submit-project">Create</button>
+                            
+                            <input type="text" id="title" class="create-inputs" placeholder="Enter Todo name.." onfocus="this.value=''" required>
+
+                            <input type="text" id="body" class="create-inputs" placeholder="Enter Todo body.." onfocus="this.value=''" maxlength="40" required>
+
+                            <input type="date" id="date" class="create-inputs">
+
+                            <button id="submit" onclick="onAdd()">Add todo</button>
                         </div>
                     </div>
 
                     <!-- tasksHead end -->
                 </div>
                 <!-- myTasks end -->
-                <!-- timeline start -->
-                <div class="timeline">
-                    <!-- timelineHead start -->
-                    <div class="timelineHead">
-                        <h2>Timeline</h2>
-                        <div class="timelineDots">
-                            <span class="material-symbols-outlined">
-                                more_horiz
-                            </span>
-                        </div>
-                    </div>
-                    <!-- timelineHead end -->
-                    <!-- timelineVideos start -->
-                    <div class="timelineVideos">
-                        <ul>
-                            <li>
-                                <span class="videoText">
-                                    <span class="material-symbols-outlined full">
-                                        slideshow
-                                    </span>
-                                    <span class="text">
-                                        Create wireframe
-                                    </span>
-                                </span>
-                                <span class="timelineTime">
-                                    32:54
-                                </span>
-                            </li>
-                            <li>
-                                <span class="videoText">
-                                    <span class="material-symbols-outlined">
-                                        slideshow
-                                    </span>
-                                    <span class="text">
-                                        Logo Design
-                                    </span>
-                                </span>
-                                <span class="timelineTime">
-                                    30:00
-                                </span>
-                            </li>
-                            <li>
-                                <span class="videoText">
-                                    <span class="material-symbols-outlined">
-                                        slideshow
-                                    </span>
-                                    <span class="text">
-                                        Dashboard Design
-                                    </span>
-                                </span>
-                                <span class="timelineTime">
-                                    30:00
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- timelineVideos end -->
-                </div>
-                <!-- timeline end -->
+                
                 <!-- calendar start -->
                 <div class="calendar">
                     <!-- calendarHead start -->
@@ -316,47 +243,7 @@
                     <!-- calendarData end -->
                 </div>
                 <!-- calendar end -->
-                <!-- messages start -->
-                <div class="messages">
-                    <!-- messagesHead start -->
-                    <div class="messagesHead">
-                        <h2>Messages</h2>
-                    </div>
-                    <!-- messagesHead end -->
-                    <!-- messagesUser start -->
-                    <div class="messagesUser">
-                        <div class="messagesUserImg">
-                            <img src="./groupImg/img1.jpg" alt="img1">
-                        </div>
-                        <h2>Marvin McKinney<br><span>Commodo volutpot noc</span></h2>
-                    </div>
-                    <!-- messagesUser end -->
-                    <!-- messagesUser start -->
-                    <div class="messagesUser">
-                        <div class="messagesUserImg">
-                            <img src="./groupImg/img2.jpg" alt="img2">
-                        </div>
-                        <h2>Wade Warren<br><span>Commodo volutpot noc</span></h2>
-                    </div>
-                    <!-- messagesUser end -->
-                    <!-- messagesUser start -->
-                    <div class="messagesUser">
-                        <div class="messagesUserImg">
-                            <img src="./groupImg/img3.jpg" alt="img3">
-                        </div>
-                        <h2>John Cooper<br><span>Commodo volutpot noc</span></h2>
-                    </div>
-                    <!-- messagesUser end -->
-                    <!-- messagesUser start -->
-                    <div class="messagesUser">
-                        <div class="messagesUserImg">
-                            <img src="./groupImg/img4.jpg" alt="img4">
-                        </div>
-                        <h2>Darlene Robertson<br><span>Commodo volutpot noc</span></h2>
-                    </div>
-                    <!-- messagesUser end -->
-                </div>
-                <!-- messages end -->
+                
             </main>
             <!-- main end -->
         </div>
@@ -388,6 +275,36 @@
             })
         })
 
+
+        // Create Task 
+        // submit.addEventListener('click', ()=>{
+        //     console.log("clock")
+        //     localStorage.setItem("projectName", projectName.value)
+        // })
+        const onAdd = ()=>{
+        const payload = {
+            title: document.getElementById("title").value,
+            body: document.getElementById("body").value,
+            date: document.getElementById("date").value,
+        }
+        console.log(payload)
+        fetch("https://wrike-clone-backend.onrender.com/todos/add",{
+            method: "POST",
+            headers:{
+                "Content-type":"application/json",
+                "Authorization":localStorage.getItem("token")
+            },
+            body: JSON.stringify(payload)
+        }).then(res=>res.json())
+        .then(res=>{
+            console.log(res)
+            Swal.fire({
+                title: `${res.msg}`,
+                text: 'Please go to Grid View or Table View!',
+            })
+        })
+        .catch(err => console.log(err))
+    }
     </script>
 </body>
 

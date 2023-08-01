@@ -28,7 +28,7 @@ const onSignup = () => {
     console.log(payload)
     localStorage.setItem("usernameid", payload.username)
 
-    fetch("http://localhost:8090/users/register", {
+    fetch("https://wrike-clone-backend.onrender.com/users/register", {
       method: "POST",
       headers: {
         "Content-type": "application/json"
@@ -37,10 +37,16 @@ const onSignup = () => {
     }).then(res => res.json())
       .then(res => {
         console.log(res)
-        Swal.fire(res.msg)
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: `${res.msg}`,
+          showConfirmButton: false,
+          timer: 1500,
+      })
         setTimeout(() => {
           window.location.href = "login.html"
-        }, 3500);
+        }, 3000);
       })
       .catch(err => console.log(err))
   }

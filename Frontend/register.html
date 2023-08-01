@@ -46,7 +46,7 @@
             display: flex;
             position: relative;
             width: 60%;
-            height: 500px;
+            height: 550px;
             border-radius: 15px;
             background-color: rgb(237, 248, 245);
             overflow: hidden;
@@ -68,10 +68,9 @@
         .logdis {
             width: 35%;
             padding: 40px;
-            height: 415px;
+            height: 455px;
             background-color: rgb(237, 248, 245);
             position: relative;
-
         }
 
         .logdis>h2 {
@@ -106,12 +105,12 @@
             font-size: 12px;
             position: absolute;
             width: 75%;
-            bottom: 100px;
+            bottom: 140px;
         }
 
         .logdis>button{
             position: absolute;
-            bottom: 40px;
+            bottom: 85px;
             left: 35px;
             width: 75%;
             height: 40px;
@@ -120,7 +119,7 @@
             border-radius: 5px;
             background-color: #7fd9df;
             color: rgb(61, 61, 61);
-
+            transition: background-color 0.3s ease;
         }
         .logdis>button:hover{
             background-color: #135c66;
@@ -135,6 +134,34 @@
         a {
             text-decoration: none;
             color: rgb(49, 49, 49);
+        }
+
+        .google-signup-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            position: absolute;
+            bottom: 30px;
+            font-size: 12px;
+            border: 1px solid #7fd9df;
+         }
+
+         .google-signup-link:hover {
+            background-color: #e7e7e7;
+         }
+
+         .google-signup-image {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+         }
+
+         span{
+            color: rgb(236, 0, 0);
         }
     </style>
 </head>
@@ -152,18 +179,24 @@
             </div>
             <div id="logdiv" class="logdis">
                 <h2>New User Please Fill Register Form</h2>
-                <input type="text" name="name" id="username" placeholder="Enter your name as per AADHAR/Govt ID*" required>
+                <input type="text" name="name" id="username" placeholder="Enter your name" required>
                 <input type="email" name="email" id="email" placeholder="Email ID*" required>
                 <input type="text" name="MOB" id="monNumber" placeholder="Enter your phone number*" maxlength="10" required>
                 <span class="inputShow"><span id="updateNUM">0</span>/10</span>
                 <input type="password" name="password" id="pass" placeholder="Password*" required>
 
                 <p id="tandoor">Already User<a
-                        href="./login.html">&nbsp<b>Click here to Login</b> &nbsp</a> or <a
-                        href="./index.html">&nbsp<b>Get back to Homepage.</b></a></p>
+                        href="./login.html">&nbsp<b>Click here to <span>Login</span></b> &nbsp</a> or <a
+                        href="./index.html">&nbsp<b>Get back to <span>Homepage</span>.</b></a></p>
                 <button onclick="onSignup()" class="continueBTN">
                     Signup
                 </button>
+                <a href="https://wrike-clone-backend.onrender.com/users/auth/google" class="google-signup-link">
+                    <img id="im"
+                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"
+                       alt="Google Logo" class="google-signup-image">
+                    Signup With Google
+                 </a>
             </div>
         </div>
     </div>

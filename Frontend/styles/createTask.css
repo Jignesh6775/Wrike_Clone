@@ -9,7 +9,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     background: linear-gradient(#a6dbe2, #5ab4c4);
 }
 
@@ -37,7 +36,6 @@ body {
 .container {
     position: relative;
     width: 95%;
-    height: 95vh;
     background: rgba(255, 255, 255, .2);
     border-radius: 25px;
     backdrop-filter: blur(10px);
@@ -87,12 +85,7 @@ body {
 }
 
 /* nav start */
-.container .left header nav {
-    position: relative;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-}
+
 .container .left header nav ul {
     position: relative;
     display: flex;
@@ -115,7 +108,6 @@ body {
 .container .left header nav ul li a {
     position: relative;
     width: 100%;
-    height: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -137,7 +129,7 @@ body {
     right: 0;
     width: 0;
     height: 100%;
-    background: #86eaf1;
+    background: #00bbc9;
     transition: .3s ease;
 }
 
@@ -166,7 +158,7 @@ body {
 .container .upgrade {
     position: relative;
     width: calc(100% - 30px);
-    height: 180px;
+    height: 170px;
     background: linear-gradient(145deg, #88eadd, #34a382);
     border-radius: 20px;
     text-align: center;
@@ -178,36 +170,31 @@ body {
     z-index: -1;
     overflow: hidden;
 }
-
-.container .upgrade h4 {
-    color: #fff;
-    font-size: 1.2em;
-    font-weight: 400;
-    margin-top: 25px;
+#updateform{
+    margin: 5px 5px;
 }
-
-.container .upgrade .upBtn {
-    position: relative;
-    width: 100%;
-    height: 40px;
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.container .upgrade .upBtn button {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #fff;
-    outline: none;
+#updateform input{
+    margin: 5px 0px;
+    border-radius: 5px;
     border: none;
-    font-size: 1.2em;
-    color: #000;
-    font-weight: 500;
+    height: 30px;
+    padding: 0px 5px;
+    width: 97%;
+}
+
+#submit {
+    position: relative;
+    padding: 5px 5px;
+    width: 50px;
+    background: #e3fff3;
+    border-radius: 5px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     cursor: pointer;
+}
+#submit:hover{
+    background-color: teal;
+    color: white;
 }
 /* upgrade end */
 /* left end */
@@ -215,7 +202,6 @@ body {
 .container .right {
     position: relative;
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -234,58 +220,6 @@ body {
     border-radius: 20px;
 }
 
-/* searchBx start */
-.container .right .top .searchBx {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-}
-
-.container .right .top .searchBx h2 {
-    color: #000;
-    font-size: 1.4em;
-    cursor: pointer;
-}
-
-.container .right .top .searchBx .inputBx {
-    position: relative;
-    width: 250px;
-    height: 40px;
-    background: #f8f2fe;
-    border-radius: 10px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-left: 10px;
-    gap: 10px;
-    overflow: hidden;
-}
-
-.container .right .top .searchBx .input span {
-    color: #999;
-    cursor: pointer;
-}
-
-.container .right .top .searchBx .inputBx input {
-    position: relative;
-    width: 100%;
-    height: 25px;
-    outline: none;
-    border: none;
-    background: transparent;
-    margin-right: 10px;
-    font-size: 1.2em;
-    color: #000;
-}
-
-.container .right .top .searchBx .inputBx span.searchClose {
-    position: absolute;
-    right: 10px;
-    cursor: pointer;
-    /* display: none; */
-}
 
 /* user start */
 .container .right .top .user {
@@ -398,10 +332,7 @@ body {
 .container .right main {
     position: relative;
     width: 100%;
-    height: calc(100% - 90px);
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(6, 1fr);
     gap: 20px;
 }
 
@@ -409,7 +340,6 @@ body {
 .container .right main .projectCard {
     position: relative;
     width: 100%;
-    height: 100%;
     background-color: rgba(255, 255, 255, 1);
     backdrop-filter: blur(5px);
     border-radius: 20px;
@@ -418,181 +348,13 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    grid-row: 1 / 4;
+    grid-row: 0 / 4;
 }
 
-.container .right main .projectCard .projectTop {
-    position: relative;
-    width: 100%;
-    height: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.container .right main .projectCard .projectTop h2 {
-    color: #000;
-    font-size: 1.2em;
-    line-height: 18px;
-    cursor: pointer;
-}
-
-.container .right main .projectCard .projectTop h2 span {
-    color: #999;
-    font-size: 0.8em;
-}
-
-.container .right main .projectCard .projectTop .projectDots {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-.container .right main .projectCard .projectTop .projectDots span {
-    color: #000;
-    font-size: 1.8em;
-    font-weight: 700;
-}
-
-.container .right main .projectCard .projectProgress {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.container .right main .projectCard .projectProgress .process {
-    position: relative;
-    padding: 5px 10px;
-    background: #f1f3ff;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.container .right main .projectCard .projectProgress .process h2 {
-    color: #8389f9;
-    white-space: nowrap;
-    font-size: 0.9em;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-}
-
-.container .right main .projectCard .projectProgress .priority {
-    position: relative;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-.container .right main .projectCard .projectProgress .priority::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 8px;
-    height: 8px;
-    transform: translate(-50%, -50%);
-    background: #ff0000;
-    border-radius: 50%;
-    box-shadow: 0 0 2px #ff0000,
-        0 0 5px #ff000077;
-}
-
-.container .right main .projectCard .projectProgress .priority h2 {
-    color: #ff0000;
-    white-space: nowrap;
-    font-size: 0.9em;
-    font-weight: 500;
-}
-
-
-.container .right main .projectCard .task {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-direction: column;
-    margin: 10px 0;
-}
-
-.container .right main .projectCard .task h2 {
-    color: #999;
-    font-size: 1em;
-}
-
-.container .right main .projectCard .task h2 bold {
-    color: #000;
-}
-.container .right main .projectCard .task .line {
-    position: relative;
-    width: 100%;
-    height: 5px;
-    background: rgba(0, 0, 0, .1);
-    border-radius: 50px;
-    z-index: -1;
-    overflow: hidden;
-}
-.container .right main .projectCard .task .line::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    width: calc(100% - 25%);
-    height: 100%;
-    background: #6577ff;
-    z-index: 1;
-    border-radius: 50px;
-}
-
-.container .right main .projectCard .due {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    cursor: pointer;
-}
-
-.container .right main .projectCard .due h2 {
-    padding: 0px 10px;
-    border: 2px solid #f5b5f5;
-    border-radius: 5px;
-    font-size: 1.1em;
-    color: #f5b5f5;
-}
-/* projectTop end */
-/* projectCard2 start */
-.container .right main .projectCard.projectCard2 {
-    grid-row: 4 / 7;
-}
-.container .right main .projectCard.projectCard2 .projectProgress .process {
-    background: #dffde0;
-}
-.container .right main .projectCard.projectCard2 .projectProgress .process h2 {
-    color: #69bc72;
-}
-.container .right main .projectCard.projectCard2 .projectProgress .priority::before {
-    background: #69bc72;
-    box-shadow: 0 0 2px #69bc72,
-        0 0 5px #69bc7277;
-}
-.container .right main .projectCard.projectCard2 .projectProgress .priority h2 {
-    color: #69bc72;
-}
-
-.container .right main .projectCard.projectCard2 .task .line::before {
-    background: #f5c75f;
-}
-/* projectCard2 end */
 /* myTasks start */
 .container .right main .myTasks {
     position: relative;
     width: 100%;
-    
     background-color: rgba(255, 255, 255, 1);
     backdrop-filter: blur(5px);
     border-radius: 20px;
@@ -605,394 +367,295 @@ body {
     grid-column: 2 / 3;
 }
 
-.container .right main .myTasks .tasksHead {
-    position: relative;
-    width: 100%;
-    height: 30px;
-    /* display: flex;
-    justify-content: space-between;
-    align-items: flex-start; */
-}
 
-.container .right main .myTasks .tasksHead h2 {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    line-height: 18px;
-    color: #000;
-    font-size: 1.2em;
-    cursor: pointer;
-}
-
-.container .right main .myTasks .tasksHead #create-project #title{
-    font-size: 18px;
-    width: 100%;
-    height: 50px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border-color: rgb(209, 209, 209);
-}
-
-.container .right main .myTasks .tasksHead #create-project #body{
-    font-size: 18px;
-    width: 100%;
-    height: 100px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    border-color: rgb(209, 209, 209);
-}
-
-.container .right main .myTasks .tasksHead #create-project #submit{
-    font-size: 17px;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    background-color: #30aa96;
-    cursor: pointer;
-}
-
-.container .right main .myTasks .tasksHead .tasksDots {
-    position: relative;
-    cursor: pointer;
-}
-
-.container .right main .myTasks .tasksHead .tasksDots span {
-    color: #000;
-    font-size: 1.8em;
-    font-weight: 700;
-}
-
-.container .right main .myTasks .tasks {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.container .right main .myTasks .tasks ul {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.container .right main .myTasks .tasks ul li {
-    position: relative;
-    width: 100%;
-    height: calc(100% / 7);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.container .right main .myTasks .tasks ul li::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1.5px;
-    background: rgba(0, 0, 0, .1);
-}
-
-.container .right main .myTasks .tasks ul li:last-child::before {
-    width: 0;
-}
-
-.container .right main .myTasks .tasks ul li .tasksIconName {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 20px;
-}
-
-.container .right main .myTasks .tasks ul li .tasksIconName .tasksIcon {
-    position: relative;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-.container .right main .myTasks .tasks ul li .tasksIconName .tasksIcon.done {
-    color: #fff;
-    background: #69bc72;
-}
-
-.container .right main .myTasks .tasks ul li .tasksIconName .tasksIcon.notDone {
-    background: #fff;
-    border: 3px solid #999;
-}
-
-.container .right main .myTasks .tasks ul li .tasksIconName .tasksName {
-    position: relative;
-    color: #000;
-    cursor: pointer;
-}
-
-.container .right main .myTasks .tasks ul li .tasksIconName .tasksName.tasksLine {
-    color: #999;
-    cursor: not-allowed;
-}
-
-.container .right main .myTasks .tasks ul li .tasksIconName .tasksName.tasksLine::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 1.5px;
-    background: rgba(0, 0, 0, .3);
-}
-
-.container .right main .myTasks .tasks ul li .tasksStar {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-.container .right main .myTasks .tasks ul li .tasksStar.full {
-    color: #f5c75f;
-}
-
-.container .right main .myTasks .tasks ul li .tasksStar.half {
-    color: #f5c75f;
-}
-/* myTasks end */
-
-/* calendar start */
-.container .right main .calendar {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 1);
-    backdrop-filter: blur(5px);
-    border-radius: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    grid-row: 1 / 4;
-    grid-column: 3 / 4;
-    padding: 20px;
-    gap: 10px;
-}
-
-.container .right main .calendar .calendarHead {
-    position: relative;
-    width: 100%;
-    height: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.container .right main .calendar .calendarHead h2 {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    line-height: 18px;
-    color: #000;
-    font-size: 1.2em;
-    cursor: pointer;
-}
-
-.container .right main .calendar .calendarHead .calendarIcon {
-    position: relative;
-    display: flex;
-    gap: 10px;
-}
-
-.container .right main .calendar .calendarHead .calendarIcon .material-symbols-outlined {
-    position: relative;
-    width: 25px;
-    height: 25px;
-    border: 3px solid #9fa7d6;
-    border-radius: 50%;
-    cursor: pointer;
-    color: #9fa7d6;
-    font-size: 1.3em;
-    font-weight: 600;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.container .right main .calendar .calendarData {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.container .right main .calendar .calendarData .weeks {
-    position: relative;
-    width: 100%;
-    height: 30px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.container .right main .calendar .calendarData .weeks li {
-    list-style: none;
-    cursor: pointer;
-    font-size: 1.1em;
-    font-weight: 500;
-}
-
-.container .right main .calendar .calendarData .days {
-    position: relative;
-    width: 100%;
-    height: calc(100% - 30px);
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    place-items: center;
-}
-
-.container .right main .calendar .calendarData .days li {
-    position: relative;
-    width: 30px;
-    height: 30px;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #000;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: .3s ease;
-}
-
-
-
-.container .right main .calendar .calendarData .days li.inactive {
-    color: #999;
-}
-
-.container .right main .calendar .calendarData .days li:hover {
-    background: #999;
-    color: #fff;
-    transition: 0s;
-}
-
-.container .right main .calendar .calendarData .days li.active {
-    background: #6577ff;
-    color: #fff;
-}
-/* calendar end */
-
-/* Responsive */
-@media (max-width: 1176px) {
-    .container .left {
-        position: absolute;
-        left: -300px;
-        height: calc(100% - 5vh);
-        z-index: 11;
-        box-shadow: none;
-        transition: .5s ease;
-    }
-
-    .container .left.active {
-        left: 20px;
-    }
-
-    .container .right.overlay::before {
-        content: '';
-        position: absolute;
-        background: rgba(0, 0, 0, .4);
-        width: 100%;
-        height: 100%;
-        z-index: 10;
-        border-radius: 20px;
-    }
-
-    .container .right .top .user .toggle {
-        display: block;
-    }
-}
-
-@media (max-width: 927px) {
-    .container {
-        height: 100%;
-        margin: 30px 0;
-    }
-
-    .container .left.active {
-        width: calc(100% - 40px);
-        height: calc(100vh - 55px);
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-
-    .container .left header .logo .close {
-        display: block;
-    }
-
-    .container .right main {
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: 1.4fr 1.4fr 1.6fr 1.3fr 1fr 1.3fr;
-    }
-
-    .container .right main * {
-        grid-row: unset !important;
-        grid-column: unset !important;
-    }
-
-    .container .right .top .searchBx h2 {
-        font-size: 1.2em;
-    }
-
-    .container .right .top .searchBx .inputBx {
-        width: 45px;
-        cursor: pointer;
-    }
-
-    .container .right .top .searchBx.active {
-        position: absolute;
-        width: calc(100% - 40px);
-        height: 45px;
-        background: #f8f2fe;
-        z-index: 10;
-        border-radius: 10px;
-    }
-
-    .container .right .top .searchBx.active h2 {
-        display: none;
-    }
-
-    .container .right .top .searchBx.active .inputBx {
-        width: 100%;
-    }
-
-    .container .right .top .searchBx.active .inputBx input {
-        padding-right: 40px;
-    }
-
-    .container .right .top .searchBx.active .inputBx span.searchClose {
-        display: block;
-    }
-
-    .container .right .top .user {
-        gap: 10px;
-    }
-}
-
-@media (max-width: 586px) {
-    .container .right .top .user .arrow {
-        display: none;
-    }
-
-    .container .right .top .user h2 {
-        display: none;
-    }
-}
 
 /* ////////////////// */
+
+.mainAfter::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgb(194, 193, 193);
+    opacity: 0.8;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-fill-mode: ease-in-out;
+}
+
+/* user input tasks style */
+
+form{
+    width: 90%;
+    margin: 50px auto;
+    text-align: center;
+}
+form input,
+form button,
+#save,
+#cancel{
+    border-radius: 30px;
+    box-shadow: none;
+    border: none;
+}
+
+form input{
+    padding: 13px 20px;
+    margin-right: 2.7rem;
+    width: 58%;
+    background-color: #eee;
+}
+
+form input,
+form input::placeholder{
+    letter-spacing: 0.7px;
+}
+
+form button,
+#save{
+    padding: 13px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background-image: linear-gradient(90deg, gold, lightseagreen);
+    color: #fff;
+}
+
+#cancel{
+    padding: 13px 20px;
+    margin-right: 1%;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 1px solid lightseagreen;
+    color: lightseagreen;
+}
+
+/* the four sections style */
+
+#container2{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+#container2 section{
+    width: 23%;
+    border: 3px solid #eee;
+    border-radius: 15px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.tasksSection{
+    height: 100%;
+    width: 100%;
+}
+
+#container2 section h2{
+    text-align: center;
+    padding: 15px;
+    margin: 0 0 5px 0;
+}
+
+.green,
+#approved ul {
+    color: rgb(1, 180, 1);
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    border-top: 2px solid rgb(1, 180, 1);
+    border-right: 2px solid rgb(1, 180, 1);
+    border-bottom: 5px solid rgb(1, 180, 1);
+    border-left: 5px solid rgb(1, 180, 1);
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+.red,
+#hold ul{
+    color: crimson; 
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    border-top: 2px solid  crimson;
+    border-right: 2px solid  crimson;
+    border-bottom: 5px solid  crimson;
+    border-left: 5px solid  crimson;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+.gold,
+#progress ul{
+    color: rgb(219, 186, 0); 
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    border-top: 2px solid rgb(245, 208, 0);
+    border-right: 2px solid rgb(245, 208, 0);
+    border-bottom: 5px solid rgb(245, 208, 0);
+    border-left: 5px solid rgb(245, 208, 0);
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+.blue,
+#review ul{
+    color: lightseagreen;  
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    border-top: 2px solid lightseagreen;
+    border-right: 2px solid lightseagreen;
+    border-bottom: 5px solid lightseagreen;
+    border-left: 5px solid lightseagreen;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+
+.li-tag{
+    width: 100%;
+    margin-top: 20px;
+    text-align: left;
+    color: rgb(90, 90, 90);  
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    background-color: #daf0ec;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.card h3,
+.card h4,
+.card h5,
+.card button{
+    margin-top: 10px;
+}
+
+.card h4{
+    width: 100%;
+    box-sizing: border-box;
+}
+
+li{
+    width: fit-content;
+    padding: 15px;
+    list-style: none;
+    text-align: center;
+    position: relative;
+}
+
+/* list options buttons */
+
+li p{
+    display: flex;
+    align-items: center;
+}
+
+li p span{
+    margin-right: 20%;
+}
+
+#status{
+    font-size: 15px;
+    width: 65%;
+    border-radius: 5px;
+    border-color: rgb(173, 173, 173);
+}
+
+.listOptionsWrapper{
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    border: 0.5px solid;
+    display: none;
+}
+
+.listOptionsWrapper button{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 10px;
+    color: #333;
+}
+
+.listOptionsWrapper button:first-child{
+    border-bottom: 0.5px solid;
+}
+
+
+
+#descrpContainer{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+    box-shadow: 0px -8px 20px rgb(165, 164, 164);
+    max-height: 0;
+    animation-name: hide;
+    animation-duration: 2s;
+    animation-fill-mode: ease-in-out;
+}
+
+#descrpWrapper{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10vh 0;
+    z-index: 100;
+}
+
+#description{
+    border: none;
+    width: 100%;
+    height: 50vh;
+    margin-bottom: 10vh;
+    padding: 3vh;
+    background-color: #eee;
+}
+
+#description,
+#description::placeholder{
+    font-size: 1rem;
+}
+
+/* animation to desplay decription box */
+
+@keyframes show{
+    100%{
+        max-height: 90vh;
+    }
+}
+
+@keyframes hide{
+    100%{
+        max-height: 0;
+    }
+}
+
+@keyframes fadeIn{
+    100%{
+        opacity: 0.8;
+    }
+}
+
+@keyframes fadeOut{
+    100%{
+        opacity: 0;
+    }
+}
+
+#updateBtn{
+    color:teal;
+    cursor: pointer;
+    border: 1px solid teal;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 5px 7px;
+    margin-right: 10px;
+  }
+  #deleteBtn{
+    background-color: rgb(252, 55, 55);
+    cursor: pointer;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 7px;
+    font-size: 15px;
+  }

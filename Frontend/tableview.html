@@ -41,9 +41,9 @@
                         <li>
                             <a href="./createTask.html">
                                 <span class="material-symbols-outlined">
-                                    task
+                                    bar_chart
                                 </span>
-                                <span class="title">Create Task</span>
+                                <span class="title">Analytics</span>
                             </a>
                         </li>
                         <li>
@@ -81,6 +81,14 @@
                     <p id="idN" style="display: none;"></p>
                     <input type="text" id="title" placeholder="change title">
                     <input type="text" id="body" placeholder="change body">
+                    <select id="status" value="Select status" class="create-inputs" >
+                        <option value="" id="">Change status</option>
+                        <option value="process" id="processInp">Process</option>
+                        <option value="hold" id="holdInp">Hold</option>
+                        <option value="review" id="reviewInp">Review</option>
+                        <option value="approved" id="approvedInp">Approved</option>
+                    </select>
+
                     <input type="submit" id="submit" value="Update Note">
                 </form>
             </div>
@@ -122,9 +130,10 @@
                     <table id="Table">
                         <thead>
                             <tr>
-                                <th>Unique ID</th>
                                 <th>Title</th>
                                 <th>Body</th>
+                                <th>Created Date</th>
+                                <th>Status</th>
                                 <th>Update</th>
                                 <th>Delete</th>
                             </tr>
@@ -162,7 +171,7 @@
     let cont = document.getElementById("Tbody")
 
     // get notes
-    let url = "http://localhost:8090/todos"
+    let url = "https://wrike-clone-backend.onrender.com/todos"
     let token = localStorage.getItem("token")
 
     function getNotes() {
@@ -189,9 +198,10 @@
         let ans = data.map((el, i) => {
             return `
                     <tr>
-                        <td>${el._id}</td>
                         <td>${el.title}</td>
                         <td>${el.body}</td>
+                        <td>${el.date.split("T")[0]}</td>
+                        <td>${el.status}</td>
                         <td id="updateBtn" class="updateBtn" data-id=${el._id}>Update</td>
                         <td id="deleteBtn" class="deleteBtn" data-id=${el._id}>Delete</td>
                     </tr>
@@ -227,65 +237,72 @@
 
     let updateform = document.getElementById("updateform")
 
-    function updateUser(){
-        let cardBtn = document.querySelector(".updateBtn")
-            cardBtn.addEventListener("click", function(e){
-                e.preventDefault()
-                let id = e.target.dataset.id
-                let title = updateform.title
-                let body = updateform.body
+   /////////   Click btn and form filled by all details    ////////////
+   function updateUser() {
+        let cardBtn = document.querySelectorAll(".updateBtn")
+        for(let btn of cardBtn){
+            btn.addEventListener("click", function (e) {
+            e.preventDefault()
+            let id = e.target.dataset.id
+            let title = updateform.title
+            let body = updateform.body
+            let status = updateform.status
 
-                fetch(`${url}/${id}`,{
-                    headers: {
-                    "Authorization":`${token}`
-                    }
-                }).then(res => res.json())
+            fetch(`${url}/${id}`, {
+                headers: {
+                    "Authorization": `${token}`
+                }
+            }).then(res => res.json())
                 .then(res => {
                     console.log(res)
                     let idN = document.getElementById("idN")
                     idN.textContent = res._id
                     title.value = res.title
                     body.value = res.body
+                    status.value = res.status
                 })
                 .catch(err => console.log(err))
-            })
-        
+        })
+        }
+
     }
 
     updateform.addEventListener("submit", ()=>{
         updateFn()
     })
 
-    function Note(title,body){
+    function Note(title, body, status) {
         this.title = title;
         this.body = body;
+        this.status = status
     }
 
-    function updateFn(){
+    function updateFn() {
         event.preventDefault()
         let idN = document.getElementById("idN").innerText
         let title = updateform.title.value
         let body = updateform.body.value
+        let status = updateform.status.value
 
-        let updatedNote = new Note(title,body)
+        let updatedNote = new Note(title, body, status)
         console.log(updatedNote)
 
-        fetch(`${url}/update/${idN}`,{
-            method:"PATCH",
-            headers:{
-                "Content-type":"application/json",
+        fetch(`${url}/update/${idN}`, {
+            method: "PATCH",
+            headers: {
+                "Content-type": "application/json",
                 "Authorization": `${token}`
             },
-            body:JSON.stringify(updatedNote)
+            body: JSON.stringify(updatedNote)
         })
-        .then(res => res.json())
-        .then((res)=>{
-            console.log("new updated",res)
-            Swal.fire(res.msg)
-            getNotes()
-        }).catch((err)=>{
-            console.log(err)
-        })
+            .then(res => res.json())
+            .then((res) => {
+                console.log("new updated", res)
+                Swal.fire(res.msg)
+                getNotes()
+            }).catch((err) => {
+                console.log(err)
+            })
     }
 
 /////////////////////////////////

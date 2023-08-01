@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <link rel="shortcut icon" href="./favicon/Picsart_23-03-28_21-41-58-083.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./favicon/Picsart_23-03-28_21-41-58-083.png" type="image/x-icon">
 
     <!-- bootstrap -->
 
@@ -41,9 +41,9 @@
                         <li>
                             <a href="./createTask.html">
                                 <span class="material-symbols-outlined">
-                                    task
+                                    bar_chart
                                 </span>
-                                <span class="title">Create Task</span>
+                                <span class="title">Analytics</span>
                             </a>
                         </li>
                         <li>
@@ -83,7 +83,7 @@
             <div class="top">
                 <!-- searchBx start -->
                 <div class="searchBx">
-                    <h2>Workister Create Task</h2>
+                    <h2 id="project-name"></h2>
                 </div>
                 <!-- searchBx end -->
                 <!-- user start -->
@@ -107,136 +107,19 @@
             <!-- main start -->
             <main>
                 <!-- projectCard start -->
-                <div class="projectCard">
-                    <!-- projectTop start -->
-                    <div class="projectTop">
-                        <h2 id="project-name"></h2>
-                        <div class="projectDots">
-                            <span class="material-symbols-outlined">
-                                more_horiz
-                            </span>
-                        </div>
-                    </div>
-                    <!-- projectTop end -->
-                    <!-- projectProgress start -->
-                    <div class="projectProgress">
-                        <div class="process">
-                            <h2>In Progress</h2>
-                        </div>
-                        <div class="priority">
-                            <h2>High Priority</h2>
-                        </div>
-                    </div>
-                    <!-- projectProgress end -->
-    
-                    <!-- task start -->
-                    <div class="task">
-                        <h2>Task Done: <bold>0</bold> / 1</h2>
-                        <span class="line"></span>
-                    </div>
-                    <!-- task end -->
-                    <!-- due start -->
-                    <div class="due">
-                        <h2>Date: 3 April 2023</h2>
-                    </div>
-                    <!-- due end -->
+                <div class="projectCard" style="max-width:100%;">
+                    <canvas id="myChart"></canvas>
+
                 </div>
                 <!-- projectCard end -->
 
-                <!-- ======================myTasks start ===================-->
-                <div class="myTasks">
-                    <!-- tasksHead start -->
-                    <div class="tasksHead">
-                        <h2>Create To-do for your project</h2>
-
-                        <div id="create-project">
-                            
-                            <input type="text" id="title" placeholder="Enter Todo name.." onfocus="this.value=''" required>
-                            <input type="text" id="body" placeholder="Enter Todo body.." onfocus="this.value=''" required>
-                            <button id="submit" onclick="onAdd()">Add todo</button>
-                        </div>
-                    </div>
-
-                    <!-- tasksHead end -->
-                </div>
-                <!-- myTasks end -->
-                
-                <!-- calendar start -->
-                <div class="calendar">
-                    <!-- calendarHead start -->
-                    <div class="calendarHead">
-                        <h2>April 2023</h2>
-                        <div class="calendarIcon">
-                            <span class="material-symbols-outlined">
-                                chevron_left
-                            </span>
-                            <span class="material-symbols-outlined">
-                                chevron_right
-                            </span>
-                        </div>
-                    </div>
-                    <!-- calendarHead end -->
-                    <!-- calendarData start -->
-                    <div class="calendarData">
-                        <ul class="weeks">
-                            <li>Sun</li>
-                            <li>Mon</li>
-                            <li>Tue</li>
-                            <li>Wed</li>
-                            <li>Thu</li>
-                            <li>Fri</li>
-                            <li>Sat</li>
-                        </ul>
-                        <ul class="days">
-                            <li class="inactive">25</li>
-                            <li class="inactive">26</li>
-                            <li class="inactive">27</li>
-                            <li class="inactive">28</li>
-                            <li class="inactive">29</li>
-                            <li class="inactive">30</li>
-                            <li>1</li>
-                            <li>2</li>
-                            <li class="active">3</li>
-                            <li>4</li>
-                            <li>5</li>
-                            <li>6</li>
-                            <li>7</li>
-                            <li>8</li>
-                            <li>9</li>
-                            <li>10</li>
-                            <li>11</li>
-                            <li>12</li>
-                            <li>13</li>
-                            <li>14</li>
-                            <li>15</li>
-                            <li>16</li>
-                            <li>17</li>
-                            <li>18</li>
-                            <li>19</li>
-                            <li>20</li>
-                            <li>21</li>
-                            <li>22</li>
-                            <li>23</li>
-                            <li>24</li>
-                            <li>25</li>
-                            <li>26</li>
-                            <li>27</li>
-                            <li>28</li>
-                            <li>29</li>
-
-                        </ul>
-                    </div>
-                    <!-- calendarData end -->
-                </div>
-                <!-- calendar end -->
-                
             </main>
-            <!-- main end -->
         </div>
         <!-- right end -->
     </div>
     <!-- container end -->
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         let toggle = document.querySelector('.toggle');
         let projectName = document.querySelector('#project-name');
@@ -247,7 +130,7 @@
         console.log(localStorage.getItem("usernameid"))
         username.innerText = localStorage.getItem("usernameid")
 
-        projectName.innerText = localStorage.getItem("projectName")
+        projectName.innerText = localStorage.getItem("projectName") + " : Analytics"
 
         toggle.addEventListener('click', () => {
             toggle.classList.toggle('active');
@@ -258,30 +141,92 @@
         //     console.log("clock")
         //     localStorage.setItem("projectName", projectName.value)
         // })
-        const onAdd = ()=>{
-        const payload = {
-            title: document.getElementById("title").value,
-            body: document.getElementById("body").value
+        const onAdd = () => {
+            const payload = {
+                title: document.getElementById("title").value,
+                body: document.getElementById("body").value
+            }
+            console.log(payload)
+            fetch("https://wrike-clone-backend.onrender.com/todos/add", {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json",
+                    "Authorization": localStorage.getItem("token")
+                },
+                body: JSON.stringify(payload)
+            }).then(res => res.json())
+                .then(res => {
+                    console.log(res)
+                    Swal.fire({
+                        title: `${res.msg}`,
+                        text: 'Please go to Grid View or Table View!',
+                    })
+                })
+                .catch(err => console.log(err))
         }
-        console.log(payload)
-        fetch("http://localhost:8090/todos/add",{
-            method: "POST",
-            headers:{
-                "Content-type":"application/json",
-                "Authorization":localStorage.getItem("token")
-            },
-            body: JSON.stringify(payload)
-        }).then(res=>res.json())
-        .then(res=>{
-            console.log(res)
-            Swal.fire({
-                title: `${res.msg}`,
-                text: 'Please go to Grid View or Table View!',
-            })
-        })
-        .catch(err => console.log(err))
-    }
 
+
+        // start-----------------------------------
+
+        function createChart() {
+            fetch("https://wrike-clone-backend.onrender.com/todos", {
+                headers: {
+                    Authorization: localStorage.getItem("token"),
+                },
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    const labels = ["Process", "Hold", "Review", "Approved"];
+                    const tasks = data;
+                    const counts = [
+                        tasks.filter((task) => task.status == "process").length,
+                        tasks.filter((task) => task.status == "hold").length,
+                        tasks.filter((task) => task.status == "review").length,
+                        tasks.filter((task) => task.status == "approved").length
+                    ];
+                    const ctx = document.getElementById("myChart").getContext("2d");
+                    const chart = new Chart(ctx, {
+                        type: "bar",
+                        data: {
+                            labels: labels,
+                            datasets: [
+                                {
+                                    label: "Tasks based on Status",
+                                    data: counts,
+                                    backgroundColor: [
+                                        "rgba(1, 200, 117, 0.9)",
+                                        "rgba(253, 171, 61, 0.9)",
+                                        "rgba(226, 68, 91, 0.9)",
+                                        "rgba(92, 163, 226, 0.9)"
+                                    ],
+                                    borderColor: [
+                                        "rgba(1, 200, 117, 1)",
+                                        "rgba(253, 171, 61, 1)",
+                                        "rgba(226, 68, 91, 1)",
+                                        "rgba(92, 163, 226, 1)"
+                                    ],
+                                    borderWidth: 1,
+                                },
+                            ],
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    
+                                },
+                            },
+                            barThickness: 130,
+                        },
+                    });
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        }
+        createChart();
+
+//  end--------------------------
     </script>
 </body>
 

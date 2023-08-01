@@ -4,6 +4,16 @@ const mongoose = require("mongoose")
 const todoSchema = mongoose.Schema({
     title: String,
     body: String,
+    date: {
+		type: Date,
+		default: Date.now,
+		required: "Please Select Date"
+	},
+    status: {
+        type: String,
+        default: "process",
+        enum: ["process", "hold", "review", "approved"],
+    },
     userID: String
 },{
     versionKey:false

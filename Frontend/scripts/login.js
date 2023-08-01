@@ -15,7 +15,7 @@ const onLogin = () => {
   }
   else {
     console.log(payload)
-    fetch("http://localhost:8090/users/login", {
+    fetch("https://wrike-clone-backend.onrender.com/users/login", {
       method: "POST",
       headers: {
         "Content-type": "application/json"
@@ -23,13 +23,29 @@ const onLogin = () => {
       body: JSON.stringify(payload)
     }).then(res => res.json())
       .then(res => {
-        console.log(res)
-        // sessionStorage.setItem("token", res.token)
-        localStorage.setItem("token", res.token)
-        Swal.fire(res.msg)
-        setTimeout(() => {
-          window.location.href = "dashboard.html"
-        }, 3500);
+        if (res.msg !== "Login successful") {
+          Swal.fire({
+            position: "center",
+            icon: "error",
+            title: `${res.msg}`,
+            text: 'Please fill the correct details!',
+          })
+        }
+        else {
+          console.log(res)
+          // sessionStorage.setItem("token", res.token)
+          localStorage.setItem("token", res.token)
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: `${res.msg}`,
+            showConfirmButton: false,
+            timer: 1500,
+          })
+          setTimeout(() => {
+            window.location.href = "dashboard.html"
+          }, 3000);
+        }
       })
       .catch(err => console.log(err))
   }

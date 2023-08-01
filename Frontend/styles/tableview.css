@@ -158,7 +158,7 @@ body {
 .container .upgrade {
     position: relative;
     width: calc(100% - 30px);
-    height: 150px;
+    height: 170px;
     background: linear-gradient(145deg, #88eadd, #34a382);
     border-radius: 20px;
     text-align: center;
@@ -196,6 +196,16 @@ body {
     background-color: teal;
     color: white;
 }
+
+
+#status{
+    font-size: 15px;
+    color: rgb(95, 95, 95);
+    width: 90%;
+    border-radius: 5px;
+    border-color: rgb(173, 173, 173);
+}
+
 
 /* upgrade end */
 /* left end */
@@ -722,6 +732,12 @@ body {
 
 
 /* ////////////////// */
+#Table{
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 20px;
+}
+
 table,
 td,
 th {
@@ -730,6 +746,7 @@ th {
 
 #table {
   border-collapse: collapse;
+  border-radius: 20px;
   width: 100%;
 }
 
@@ -739,15 +756,16 @@ td {
 }
 
 tr > th {
-  background-color: teal;
+  background-color: #2ba4b9;
   color: white;
 }
 
 #updateBtn{
-  color:teal;
+  background-color:rgb(83, 216, 194);
+  
   cursor: pointer;
 }
 #deleteBtn{
-  background-color: rgb(252, 55, 55);
+  background-color: rgb(253, 92, 92);
   cursor: pointer;
 }
