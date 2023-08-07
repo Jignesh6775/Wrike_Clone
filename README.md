@@ -4,7 +4,7 @@ Frontend Link: https://profound-basbousa-ffaf25.netlify.app/
 
 Hello there,
 
-This is individual project , and I am alone responsible for Whole project.
+This is a clone of a project management website called Wrike. You can create manage your project here. Project that I made using HTML, CSS, JavaScript for frontend and Express, NodeJS, and MongoDB for backend. It was an individual project built and executed in 5 days..
 i build this project in 4 Days and i use some follownig tech stacks to build this project :-
 
     ● HTML
@@ -13,9 +13,6 @@ i build this project in 4 Days and i use some follownig tech stacks to build thi
     ● NodeJS
     ● Express
     ● MongoDB
-    
-This project is clone of "wrike.com" and i gave another name to our clone project is "Workister".
-we build following 5 Pages of this website :-
 
 ● Home Page (index.html , index.css &  index.js) :
 
