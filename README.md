@@ -1,11 +1,11 @@
 # Workister
 
-Frontend Link: https://profound-basbousa-ffaf25.netlify.app/
+Frontend Link: https://wrike-clone-mu.vercel.app/
 
 Hello there,
 
-This is a clone of a project management website called Wrike. You can create manage your project here. Project that I made using HTML, CSS, JavaScript for frontend and Express, NodeJS, and MongoDB for backend. It was an individual project built and executed in 5 days..
-i build this project in 4 Days and i use some follownig tech stacks to build this project :-
+This is a clone of a project management website called Wrike. You can create and manage your project here. Project that I made using HTML, CSS, JavaScript for frontend and Express, NodeJS, and MongoDB for the backend. It was an individual project built and executed in 5 days.
+I built this project in 4 Days and I use the following tech stacks to build this project:-
 
     ● HTML
     ● CSS
